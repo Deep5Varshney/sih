@@ -22,7 +22,7 @@ export default function TouristUpload() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/upload", formData, {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setCid(res.data.cid);
